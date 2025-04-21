@@ -48,9 +48,8 @@ git clone https://github.com/humza1201/MDVV.git
 
 
 2. Navigate to the folder:
-   (C:\Users\humza\OneDrive\Desktop\MDVV)
 
-cd MDVV
+ cd MDVV
 
 📚 What I Learned
 
