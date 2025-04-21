@@ -1,0 +1,456 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+header{
+   display: flex;
+   height: 70px;
+   background-color: rgba(255, 255, 255, 0.193);
+   backdrop-filter: blur(10px);
+   padding: 0 50px;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+   z-index: 100;
+   width: 94.5%;
+   overflow: hidden;
+}
+
+header h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+.search-box{
+    display: flex;
+    align-items: center;
+}
+
+.search-box img{
+    width: 20px;
+    cursor: pointer;
+    background-color: lightgray;
+    padding: 5px 10px;
+    margin: -1px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.search-box input{
+    padding: 7px 30px;
+    border: none;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: lightgray;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    /* width: 200%; */
+}
+
+nav a{
+    text-decoration: none;
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 10px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.785);
+    transition: 0.5s;
+}
+
+nav a:hover{
+    color: #ff0040;
+}
+
+
+.container{
+    width: 100vw;
+    height: 130vh;
+    /* overflow: hidden; */
+    position: relative;
+    margin-top: -70px;
+}
+
+.container .movie-list .items{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    inset: 0 0 0 0;
+}
+
+.container .movie-list .items img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+.container .movie-list .items .content{
+    position: absolute;
+    top: 10%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.598);
+}
+
+.container .movie-list .items .content h1{
+    font-size: 65px;
+    font-weight: bold;
+    text-wrap: nowrap;
+    
+}
+
+.details{
+    display: flex;
+    /* justify-content: space-between;
+    align-items: center; */
+    text-wrap: nowrap;
+    margin-bottom: -20px;
+}
+
+.details p{
+    border-right: 2px solid #fefafb;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 10px;
+    color: #ffcc00;
+}
+
+.details p:last-child{
+    border-right: none;
+}
+
+.content h4{
+    max-width: 400px;
+    font-size: 17px;
+    line-height: 25px;
+    margin: 40px 0;
+}
+
+.container .buttons{
+    display: flex;
+}
+
+.download-btn{
+    background-color: #ffcc00;
+    color: black;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.598);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+
+.watch-btn{
+    background-color: #fbfaf9;
+    color: black;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.598);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+
+.download-btn:hover{
+    opacity: 0.8;
+    transform: scale(2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.598);
+}
+
+.watch-btn:hover{
+    opacity: 0.8;
+    transform: scale(2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.598);
+}
+
+.vid-box{
+    border: 2px solid #ffcc00;
+    width: 250px;
+    height: 140px;
+    border-radius: 20px;
+    margin-top: 100px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.598);
+}
+
+.vid-box video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 45%;
+    width: max-content;
+    z-index: 10000;
+    display: flex;
+    gap: 20px;
+    background-color: rgba(211, 211, 211, 0.126);
+    backdrop-filter: blur(10px);
+    border-top-left-radius: 50px;
+    /* border-top-right-radius: 50px; */
+    border-bottom-left-radius: 50px;
+    /* border-bottom-right-radius: 50px; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.598);
+    /* padding: 10px 20px; */
+    
+}
+
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+
+.thumbnail .item .tum-content{
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    right: 10px;
+}
+
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 45%;
+    z-index: 10000;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+}
+
+.arrows button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: lightgray;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.arrows button:hover{
+    background-color: #6e6e6b;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.598);
+}
+
+
+/* NEW */
+.container .movie-list .items:nth-child(1){
+    z-index: 1;
+}
+
+.container .movie-list .items:nth-child(1) .content{
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s linear 1s forwards;
+}
+
+@keyframes showContent{
+    from{
+        filter: blur(20px);
+        opacity: 0;
+    }
+    to{
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.container.next .list .items:nth-child(1) img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 100%;
+    animation: showimage 1.5s linear 1s forwards;
+}
+
+@keyframes showimage{
+    from{
+        bottom: 50px;
+        left: 50%;
+        border-radius: 100%;
+        width: 150px;
+        height: 220px;
+    }
+    to{
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* .container.next .thumbnail{
+    animation: effectnext 0.5s linear 1s forwards;
+}
+
+@keyframes effectnext{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(150px);
+    }
+} */
+
+.container.prev .list .items:nth-child(2){
+    z-index: 200;
+}
+
+/* .container.prev .list .items:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outFrame 0.5s linear 1s forwards;
+}
+
+@keyframes outFrame{
+    from{
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+    }
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 50px;
+    }
+} */
+
+/* .container.prev .list .items:nth-child(2) .content{
+    animation: contentout 1.5s linear 1s forwards;
+}
+
+@keyframes contentout{
+    from{
+        filter: blur(0);
+        opacity: 1;
+    }
+    to{
+        filter: blur(20px);
+        opacity: 0;
+    }
+} */
+
+.container.next .arrows button,
+.container.prev .arrows button{
+    pointer-events: none;
+}
+
+
+.container.time{
+    position: relative;
+    z-index: 10000;
+    background-color: #ff0040;
+    width: 0;
+    height: 5px;
+    top: 0;
+    transition: margin-right 2.5s linear 0s forwards;
+}
+
+/* .container.next .time,
+.container.prev .time{
+    animation: time 2s linear 1s forwards;
+}
+
+@keyframes time{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+} */
+
+@media screen and (max-width: 700px){
+    .container .movie-list .items .content{
+        padding: 0;
+    }
+    .container .movie-list .items .content h1{
+        font-size: 40px;
+    }
+    /* .container .movie-list .items .content .details{
+        font-size: 19px;
+    } */
+    .container .movie-list .items .content .details p{
+        font-size: 15px;
+    }
+    .container .movie-list .items .content .details h4{
+        margin: 10px 0;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .vid-box{
+        margin-top: 15px;
+    }
+    header{
+        padding: 0 10px;
+    }
+
+    .content{
+        top: 10%;
+    }
+
+    .thumbnail{
+        top: 75%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 55%;
+    }
+
+    .arrows{
+        left: 15%;
+    }
+}
